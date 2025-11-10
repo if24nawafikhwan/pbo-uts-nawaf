@@ -3,18 +3,26 @@
 namespace App\Math;
 
 class LuasLingkaran {
-    public const PHI = 3.14;
+
+    public const phi = 3.14;
     protected int $jari;
-
+    
     public function __construct($isiJari = 1) {
-        $this->jari = $isiJari;
+        $this->jari = $isiJari; //10
     }
 
-    public function hitungLuas(): float {
-        return self::PHI * ($this->jari ** 2);
+    public function tampil($nama = 'ban') {
+        $rumus = LuasLingkaran::phi * ($this->jari * $this->jari);
+        echo "Lingkaran {$nama} hasilnya adalah: {$rumus}";
     }
 
-    public function tampil($nama = 'ban'): void {
-        echo "Luas lingkaran {$nama} = " . $this->hitungLuas();
+    public static function testing() {
+        echo "<br/>";
+        echo "ini dari static";
+    }
+
+    public function __destruct() {
+        echo "<br/>";
+        echo "udah ah cape";
     }
 }
